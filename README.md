@@ -37,6 +37,7 @@ Manipulação de listas e objetos
 Busca e filtragem de dados
 
 🧱 Estrutura do Projeto
+
 OO-Sabor-Express
 │
 ├── main.py                 # API FastAPI
@@ -57,7 +58,9 @@ OO-Sabor-Express
 Os dados dos restaurantes são obtidos da API pública:
 
 https://fakerestaurantapi.runasp.net/api/Restaurant
+
 🚀 Endpoints disponíveis
+
 Listar todos os restaurantes
 GET /restaurantes
 Buscar restaurantes por categoria
@@ -72,6 +75,7 @@ Exemplo:
 GET /restaurantes/1
 
 ▶️ Como Executar o Projeto
+
 1️⃣ Clonar o repositório
 git clone https://github.com/CbrunoS/OO-Sabor-Express.git
 
