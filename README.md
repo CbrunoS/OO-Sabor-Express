@@ -1,57 +1,111 @@
-🍽️ Sistema de Cadastro e Avaliação de Restaurantes
+🍽️ OO Sabor Express API
 
-Projeto desenvolvido em Python com foco em prática de Programação Orientada a Objetos.
+API desenvolvida em Python + FastAPI que consome dados de uma API pública de restaurantes e disponibiliza endpoints para consulta e busca.
 
-📌 Objetivo
+O projeto começou como um exercício de Programação Orientada a Objetos e evoluiu para uma API REST funcional, aplicando conceitos de arquitetura modular e consumo de APIs externas.
 
-Simular um sistema simples onde é possível:
+📌 Objetivo do Projeto
 
-Cadastrar restaurantes
+Criar uma API que permita:
 
-Ativar/desativar restaurantes
+Listar restaurantes
 
-Adicionar avaliações
+Buscar restaurantes por categoria
 
-Calcular média das avaliações
+Buscar restaurantes por nome
 
-🧱 Estrutura do Projeto
+Consultar restaurante específico pelo ID
 
-restaurante.py → Classe principal Restaurante
-
-avaliacao.py → Classe responsável pelas avaliações
+Os dados são obtidos de uma API pública externa e transformados em objetos da aplicação.
 
 🧠 Conceitos Aplicados
 
-Classes e Objetos
+Programação Orientada a Objetos (POO)
 
-Encapsulamento
+Consumo de APIs externas (requests)
 
-Métodos de instância
+Desenvolvimento de API REST
 
-List comprehension
+FastAPI
 
-Uso de @property para proteção de atributos
+Estrutura modular de projeto
 
-Organização modular do código
+Separação de responsabilidades
 
-▶️ Como Executar
+Manipulação de listas e objetos
 
-Certifique-se de ter o Python 3 instalado.
+Busca e filtragem de dados
 
-Windows:
-python app.py
+🧱 Estrutura do Projeto
+OO-Sabor-Express
+│
+├── main.py                 # API FastAPI
+│
+├── modelos
+│   └── restaurante.py      # Classe Restaurante
+│
+├── servicos
+│   └── api_restaurantes.py # Consumo da API externa
+│
+├── utils
+│   ├── buscas.py           # Funções de busca
+│   └── formatador.py       # Exibição de dados
+│
+└── venv                    # Ambiente virtual
+🌐 API utilizada
 
-Linux/macOS:
-python3 app.py
+Os dados dos restaurantes são obtidos da API pública:
 
-📈 Melhorias Futuras
+https://fakerestaurantapi.runasp.net/api/Restaurant
+🚀 Endpoints disponíveis
+Listar todos os restaurantes
+GET /restaurantes
+Buscar restaurantes por categoria
+GET /restaurantes/buscar?categoria=Biryani
+Buscar restaurantes por nome
+GET /restaurantes/buscar-nome?nome=Paradise
+Buscar restaurante por ID
+GET /restaurantes/{id}
 
-Validação de notas (0 a 5)
+Exemplo:
 
-Tratamento de erros
+GET /restaurantes/1
 
-Interface via terminal
+▶️ Como Executar o Projeto
+1️⃣ Clonar o repositório
+git clone https://github.com/CbrunoS/OO-Sabor-Express.git
 
-Persistência de dados em arquivo
+Entrar na pasta:
 
-Testes automatizados
+cd OO-Sabor-Express
+2️⃣ Criar ambiente virtual
+
+Linux / macOS
+
+python3 -m venv venv
+source venv/bin/activate
+
+Windows
+
+python -m venv venv
+venv\Scripts\activate
+
+3️⃣ Instalar dependências
+pip install fastapi uvicorn requests
+
+4️⃣ Executar a API
+uvicorn main:app --reload
+
+5️⃣ Acessar documentação automática
+
+FastAPI gera automaticamente uma interface para testar a API:
+
+http://127.0.0.1:8000/docs
+
+👨‍💻 Autor
+
+Projeto desenvolvido por Bruno Cardoso
+Focado em transição de carreira para Desenvolvedor Python com foco em automação.
+
+GitHub:
+https://github.com/CbrunoS
